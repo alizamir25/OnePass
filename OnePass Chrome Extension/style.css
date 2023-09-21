@@ -1,0 +1,190 @@
+:root {
+  --bg-color: #050505; /* Dark theme background colour */
+  --bg-color-light: #ffffff; /* Light theme background colour */
+  --main-color: #800020; /* Text color for dark theme */
+  --accent-color: #0078d4;
+}
+
+/* Styles for the light theme */
+.light-theme {
+  --bg-color: #ffffff; /* Change background colour for light theme */
+  --main-color: #0078d4; /* Change text colour for light theme */
+  --width: 40px;
+  --height: 40px;
+  --footer:#050505;
+}
+
+/* Font used throughout: */
+@font-face {
+  font-family: myFont3;
+  src: url(FiraCode-VariableFont_wght.ttf);
+}
+
+/* Apply styles to various elements when using light theme */
+body.light-theme #darkModeIcon{
+  width: var(--width);
+  height: var(--height);
+}
+
+body.light-theme footer #footerExtension {
+  color: var(--footer);
+  font-weight:550 ;
+}
+
+body.light-theme .version{
+  color: var(--footer);
+}
+
+body.light-theme #websiteLink a{
+  color: #0078d4;
+}
+
+/* Global styles */
+body {
+  font-family: myFont3;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  height: 200px;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add colour transition */
+}
+
+/* Styles for the dark mode toggle button */
+#darkModeToggle {
+  position: absolute;
+  top: 10px; 
+  right: 5px; 
+  cursor: pointer;
+  z-index: 2;
+ 
+}
+
+/* Styles for the footer */
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 5px 0; 
+  margin-right: 30px;
+  font-size: 12px;
+}
+
+/* Styles for the light mode icon */
+#lightModeIcon
+ {
+  width: 35px;
+  height: 35px;
+}
+
+/* Styles for the dark mode icon */
+#darkModeIcon {
+  display: none;
+}
+
+#darkModeIcon{
+  width: 50px;
+  height: 50px;
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: var(--bg-color); /* Apply background colour based on the theme */
+  transition: background-color 0.3s ease-in-out; /* Add background colour transition */
+}
+
+.light-theme {
+  --bg-color: var(--bg-color-light); /* Apply light theme background colour */
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: var(--main-color); /* Apply text colour based on the theme */
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+}
+
+#websiteLink a{
+  color: #800020;
+  font-weight: bold;
+}
+
+.version {
+  position: absolute;
+  top: 10px; 
+  left: 10px; 
+  font-size: 14px; 
+  color: #fff; 
+  font-weight: bold; 
+  font-family: myFont3;
+}
+
+input {
+  flex: 1;
+  margin-right: 5px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border-color: var(--main-color);
+  font-family: myFont3;
+  
+}
+
+.copyicon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.copy-notification {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.copy-notification.show {
+  opacity: 1;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--bg-color); /* Change text colour based on the active theme */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add colour transition */
+  font-family: myFont3;
+  margin-right: 23px;
+}

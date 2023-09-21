@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Random Password Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  </head>
+
+  <header>
+    <!-- Dark mode toggle buttons -->
+<div class="dark-mode-toggle" id="darkModeToggle">
+    <img id="lightModeIcon" src="icons/icons8-sun (1).svg" alt="Light Mode" title="Toggle Light Theme">
+    <img id="darkModeIcon" src="icons/110827_moon_icon.svg" alt="Dark Mode" title="Toggle Dark Theme">
+  </div>
+  
+</header>
+<body>
+  <!-- Version text on the top-left corner -->
+  <div class="version">V 1.0</div>
+
+  <div class="container">
+    <!-- Extension name -->
+    <h1>OnePass</h1>
+  
+    <div class="password-container">
+      <!-- Input field for displaying generated passwords -->
+      <input type="text" id="password" readonly>
+      <div class="copyicon">
+        
+        <!-- Copy button for copying the passwords -->
+        <img src="icons\copy.svg" alt="clipboard icon" title="Copy password">
+      </div>
+    </div>
+    <!-- Button to generate a secure password -->
+    <button id="generateButton">Generate Secure Password</button>
+  </div>
+  <footer>
+    <!-- Extension copyright notice -->
+    <p id="footerExtension"> © 2023 OnePass </p>
+    <!-- Link to the extension author's (my) website -->
+    <p id="websiteLink"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran">Also check out my Website</a></p>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
