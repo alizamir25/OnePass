@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "OnePass",
-  "version": "1.0",
+  "name": "OnePass - Password Generator",
+  "version": "1.0.1",
   "description": "Your Password Solution in One Click",
   "action": {
     "default_popup": "index.html",
