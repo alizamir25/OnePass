@@ -39,6 +39,11 @@ body.light-theme #websiteLink a{
   color: #0078d4;
 }
 
+body.light-theme #switchGenerator{
+  background-color: rgba(0, 120, 212, 0.1);
+  
+}
+
 /* Global styles */
 body {
   font-family: myFont3;
@@ -46,7 +51,7 @@ body {
   margin: 0;
   padding: 0;
   width: 350px;
-  height: 200px;
+  height: 275px;
   background-color: var(--bg-color);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add colour transition */
 }
@@ -158,6 +163,46 @@ input {
   cursor: pointer;
 }
 
+.copypinicon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 255px; 
+  margin-top: -25px;
+}
+
+/* Styles for the input field in the PIN section */
+#pin {
+  flex: 1;
+  margin-right: 5px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border-color: var(--main-color);
+  font-family: myFont3;
+}
+
+/* Styles for the generate button in the PIN section */
+#generatePinButton {
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--bg-color); 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; 
+  font-family: myFont3;
+  margin-top: 10px; 
+  margin-left: 21px;
+}
+
 .copy-notification {
   position: absolute;
   top: 5px;
@@ -187,4 +232,17 @@ button {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add colour transition */
   font-family: myFont3;
   margin-right: 23px;
+}
+
+/* Styles for the switch button */
+#switchGenerator {
+  background-color: rgba(128, 0, 32, 0.2); 
+  color: var(--main-color); 
+  border: none;
+  padding: 10px 15px; 
+  margin-top: 25px; 
+  margin-right: 260px; 
+  font-weight: bold; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease-in-out; 
 }

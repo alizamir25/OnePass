@@ -20,6 +20,23 @@ function generatePassword() {
   passwordInput.value = password;
 }
 
+// Function to generate a random PIN
+function generatePin() {
+  const length = 4; // PIN Length set to 4
+  const charset = "0123456789";
+  let pin = "";
+
+  // Generate the PIN digits
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    pin += charset[randomIndex];
+  }
+
+  // Display the generated PIN in the input field
+  const pinInput = document.getElementById("pin");
+  pinInput.value = pin;
+}
+
 // Function to show a "Copied!" notification
 function showCopyNotification() {
   const notification = document.createElement("div");
@@ -38,10 +55,10 @@ function showCopyNotification() {
   }, 1500);
 }
 
-// Function to copy the generated password to the clipboard
-function copyPassword() {
-  const passwordInput = document.getElementById("password");
-  passwordInput.select();
+// Function to copy the generated password or PIN to the clipboard
+function copyToClipboard(id) {
+  const inputField = document.getElementById(id);
+  inputField.select();
   document.execCommand("copy");
 
   // Show the "Copied!" notification
@@ -50,17 +67,32 @@ function copyPassword() {
 
 // Event listener for when the page is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Generate a password when the page loads
+  
+  // Generate intial password when extension is first opened
   generatePassword();
+  // Generate intial password when extension is first opened
+  generatePin();
 
-  // Add click event listeners to the "Generate" button and copy icon
-  const generateButton = document.getElementById("generateButton");
-  generateButton.addEventListener("click", generatePassword);
+  // Add click event listeners to the "Generate" button for both sections
+  const generatePinButton = document.getElementById("generatePinButton");
+  generatePinButton.addEventListener("click", generatePin);
 
-  const copyIcon = document.querySelector(".copyicon");
-  copyIcon.addEventListener("click", copyPassword);
+  const generatePasswordButton = document.getElementById("generatePasswordButton");
+  generatePasswordButton.addEventListener("click", generatePassword);
+
+  // Add click event listeners to the copy icon for both sections
+  const copyPinIcon = document.querySelector(".copypinicon");
+  copyPinIcon.addEventListener("click", () => {
+    copyToClipboard("pin");
+  });
+
+  const copyPasswordIcon = document.querySelector(".copyicon");
+  copyPasswordIcon.addEventListener("click", () => {
+    copyToClipboard("password");
+  });
 });
 
+//Dark Mode Toggle:
 // Get references to elements for dark mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
@@ -81,3 +113,33 @@ darkModeToggle.addEventListener('click', () => {
         sunIcon.style.display = 'block';
     }
 });
+
+//Switch Toggle:
+// Add an event listener to the switch button
+const switchGeneratorButton = document.getElementById("switchGenerator");
+const passwordSection = document.getElementById("passwordSection");
+const pinSection = document.getElementById("pinSection");
+
+// Function to toggle between password and PIN generator
+function toggleGenerator() {
+  if (passwordSection.style.display === "block") {
+    // Switch to PIN generator
+    passwordSection.style.display = "none";
+    pinSection.style.display = "block";
+    switchGeneratorButton.textContent = "PassGen";
+    switchGeneratorButton.title = "Switch to Password Generator"
+  } else {
+    // Switch to password generator
+    pinSection.style.display = "none";
+    passwordSection.style.display = "block";
+    switchGeneratorButton.textContent = "PIN Gen";
+    switchGeneratorButton.title = "Switch to PIN Generator"
+  }
+}
+
+// Set the initial text content
+toggleGenerator();
+
+// Add click event listener to toggle the generator
+switchGeneratorButton.addEventListener("click", toggleGenerator);
+

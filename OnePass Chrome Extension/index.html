@@ -16,9 +16,16 @@
   
 </header>
 <body>
-  <!-- Version text on the top-left corner -->
-  <div class="version">V 1.0.1</div>
 
+  <!-- Switch button between password and pin gen -->
+  <button id="switchGenerator" title="Switch to PIN Generator">PIN Gen</button>
+
+
+  <!-- Section for password gen-->
+  <div id="passwordSection">
+  <!-- Version text on the top-left corner -->
+  <div class="version">V 1.1.0</div>
+  
   <div class="container">
     <!-- Extension name -->
     <h1>OnePass</h1>
@@ -33,7 +40,7 @@
       </div>
     </div>
     <!-- Button to generate a secure password -->
-    <button id="generateButton">Generate Secure Password</button>
+    <button id="generatePasswordButton">Generate Secure Password</button>
   </div>
   <footer>
     <!-- Extension copyright notice -->
@@ -41,6 +48,32 @@
     <!-- Link to the extension author's (my) website -->
     <p id="websiteLink"><a href="https://bassit-code.github.io/">Check Out My Website</a></p>
 </footer>
+</div>
+
+<!-- Section for pin gen-->
+<div id="pinSection" style="display: none;">
+  <div class="version">V 1.1.0</div>
+
+  <div class="container">
+    <!-- Extension name -->
+    <h1>OnePass</h1>
+
+    <!-- Input field for displaying generated PINs -->
+    <input type="text" id="pin" readonly>
+    <div class="copypinicon">
+      <!-- Copy button for copying the PINs -->
+      <img src="icons\copy.svg" alt="clipboard icon" title="Copy pin">
+    </div>
+    <!-- Button to generate a secure PIN -->
+    <button id="generatePinButton">Generate Secure Pin</button>
+  </div>
+  <footer>
+    <!-- Extension copyright notice -->
+    <p id="footerExtension"> © 2023 OnePass </p>
+    <!-- Link to my website -->
+    <p id="websiteLink"><a href="https://bassit-code.github.io/">Check Out My Website</a></p>
+  </footer>
+</div>
   <script src="script.js"></script>
 </body>
 </html>
