@@ -94,14 +94,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Dark Mode Toggle:
 // Get references to elements for dark mode toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
+const modeToggle = document.getElementById('modeToggle');
+modeToggle.addEventListener('change', () => {
+  if (modeToggle.checked) {
+      document.body.classList.remove('light-theme');
+      document.body.classList.add('dark-theme');
+  } else {
+      document.body.classList.remove('dark-theme');
+      document.body.classList.add('light-theme');
+  }
+});
+
 const body = document.body;
 
 const sunIcon = document.getElementById('lightModeIcon');
 const moonIcon = document.getElementById('darkModeIcon');
 
 // Event listener for toggling between light and dark themes
-darkModeToggle.addEventListener('click', () => {
+modeToggle.addEventListener('click', () => {
     body.classList.toggle('light-theme');
     
     // Toggle the visibility of moon and sun icons based on the selected theme
@@ -112,6 +122,15 @@ darkModeToggle.addEventListener('click', () => {
         moonIcon.style.display = 'none';
         sunIcon.style.display = 'block';
     }
+});
+
+// Save user preference for dark/light mode
+modeToggle.addEventListener('change', () => {
+  if (modeToggle.checked) {
+      localStorage.setItem('mode', 'dark');
+  } else {
+      localStorage.setItem('mode', 'light');
+  }
 });
 
 //Switch Toggle:
@@ -142,4 +161,3 @@ toggleGenerator();
 
 // Add click event listener to toggle the generator
 switchGeneratorButton.addEventListener("click", toggleGenerator);
-
